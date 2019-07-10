@@ -1,5 +1,5 @@
 # Site settings
-title: Kevin's Blog
+title: 許凯旋的博客 | Kevin's Blog
 SEOTitle: 許凯旋的博客 | Kevin's Blog
 header-img: img/home-bg.jpg
 email: triumph_9431@qq.com
@@ -68,8 +68,8 @@ ga_domain: huangxuan.me
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "写写代码，做做设计，看看产品。世界那么大，多玩玩看看。"
-sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "敲敲代码，打打篮球，看看产品。世界那么大，多看看走走。"
+sidebar-avatar: https://raw.githubusercontent.com/xkx9431/xkx_blog/master/img/xkx_photo.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -82,8 +82,8 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 # Friends
 friends: [
     {
-        title: "Hux Blog",
-        href: "http://huangxuan.me"
+        title: "Xkx Blog",
+        href: "https://xkx9431.github.io/xkx_blog"
     },{
         title: "Foo",
         href: "#"
