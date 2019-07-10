@@ -68,7 +68,7 @@ ga_domain: huangxuan.me
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "敲敲代码，打打篮球，看看产品。世界那么大，多看看走走。"
+sidebar-about-description: "敲敲代码，打打篮球，看看风景。世界那么大，多看看走走。"
 sidebar-avatar: https://raw.githubusercontent.com/xkx9431/xkx_blog/master/img/xkx_eye_photo.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
