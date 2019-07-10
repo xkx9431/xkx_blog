@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: notes
+permalink: /notes/
 ---
 
 Some information about you!
@@ -12,4 +12,4 @@ A place to include any other types of information that you'd like to include abo
 
 ### Contact me
 
-[triumph_9431@qq.com](mailto:triumph_9431@qq.com)
+[triumph_9431@qq.com] (mailto:triumph_9431@qq.com)
