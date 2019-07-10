@@ -9,6 +9,11 @@ header-img: "img/post-bg-js-version.jpg"
 tags:
     - Web Develop
     - JavaScript
+    - Python
+    - CAE
+    - 篮球
+    - 航空
+    - NLP
 ---
 
 
