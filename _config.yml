@@ -1,5 +1,5 @@
 # Site settings
-title: 許凯旋的博客 | Kevin's Blog
+title: Kevin's Blog
 SEOTitle: 許凯旋的博客 | Kevin's Blog
 header-img: img/home-bg.jpg
 email: triumph_9431@qq.com
@@ -12,9 +12,9 @@ baseurl: "/xkx_blog"         # for example, '/blog' if your blog hosted on 'host
 
 # SNS settings
 RSS: false
-weibo_username:     xkx
-zhihu_username:     huxpro
-github_username:    huxpro
+weibo_username:     許敲敲
+zhihu_username:     許敲敲
+github_username:    xkx9431
 #twitter_username:  huxpro
 facebook_username:  huxpro
 
@@ -69,7 +69,7 @@ ga_domain: huangxuan.me
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "敲敲代码，打打篮球，看看产品。世界那么大，多看看走走。"
-sidebar-avatar: https://raw.githubusercontent.com/xkx9431/xkx_blog/master/img/xkx_photo.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: https://raw.githubusercontent.com/xkx9431/xkx_blog/master/img/xkx_eye_photo.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
