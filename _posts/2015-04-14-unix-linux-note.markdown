@@ -8,7 +8,8 @@ header-img: "img/post-bg-unix-linux.jpg"
 tags:
     - OS
     - Unix
-    - Linux
+	- Linux
+	- python
 ---
 
 > This document is not completed and will be updated anytime.

@@ -7,8 +7,13 @@ date:       2015-07-09
 author:     "Hux"
 header-img: "img/post-bg-js-version.jpg"
 tags:
-    - 前端开发
+    - Web Develop
     - JavaScript
+    - Python
+    - CAE
+    - 篮球
+    - 航空
+    - NLP
 ---
 
 

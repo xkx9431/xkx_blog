@@ -1,0 +1,58 @@
+---
+layout:     post
+title:      "Welcome to xkx Blog"
+subtitle:   " \"Hello World, Hello Blog\""
+date:       2019-07-10 24:00:00
+author:     "許敲敲"
+header-img: "img/post-bg-2015.jpg"
+tags:
+    - 生活
+---
+
+> “Yeah It's on. ”
+
+
+## 前言
+
+許敲敲 的 Blog 就这么开通了。
+
+[跳过废话，直接看技术实现 ](#build)
+
+
+
+2019 年，<strong>許敲敲</strong> 总算有个地方可以好好写点东西了。
+
+
+我已经做好准备要当一个程序员了， Blog 这种轮子要是挂在简书上就太没意思了。一是觉得大部分 Blog 服务都太丑，二是觉得不能随便定制没逼格。一直都想找个地方写写东西，但之前真的不懂的太多了，虽然现在也是，结果就一直都没有什么地方可以写写。现在好了，了解可以直接fork jekyll项目在github上部署一些静态的网页，已经够了。后面也会好好学学linux,学习各种web 框架，做点厉害的东西出来。加油！
+
+
+<p id = "build"></p>
+---
+
+## 正文
+
+主要内容感谢开源博主 [黄玄]( Huxpro/huxpro.github.io),各种模板配置起来很轻松，像大神致敬。
+
+接下来说说搭建这个博客的技术细节。  
+
+正好之前就有关注过 [GitHub Pages](https://pages.github.com/) + [Jekyll](http://jekyllrb.com/) 快速 Building Blog 的技术方案，非常轻松时尚。
+手动推荐！
+
+其优点非常明显：
+
+* **Markdown** 带来的优雅写作体验
+* 非常熟悉的 Git workflow ，**Git Commit 即 Blog Post**
+* 利用 GitHub Pages 的域名和免费无限空间，不用自己折腾主机
+	* 如果需要自定义域名，也只需要简单改改 DNS 加个 CNAME 就好了
+* Jekyll 的自定制非常容易，基本就是个模版引擎
+
+
+## 计划
+这个blog 会以记录学习为主，也会记录一些自己的想法。不定时更新
++ CAE 计算固体力学(研究生三年不能白上)
++ Cloud Web Developer 西门极客养成记
++ 前言技术 AI相关 NLP, Computing Intelligence
++ 篮球 美食 旅行 生活
+
+
+

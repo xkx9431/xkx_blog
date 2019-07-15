@@ -1,20 +1,20 @@
 # Site settings
-title: Your Blog
-SEOTitle: 你的博客 | Your Blog
+title: Kevin's Blog
+SEOTitle: 許凯旋的博客 | Kevin's Blog
 header-img: img/home-bg.jpg
-email: huxpro@gmail.com
-description: ""
+email: triumph_9431@qq.com
+description: " Like a god like a dog"
 keyword: ""
-url: "http://huangxuan.me"              # your host, for absolute URL
-baseurl: "/huxblog-boilerplate"         # for example, '/blog' if your blog hosted on 'host/blog'
+url: " https://xkx9431.github.io/xkx_blog/"              # your host, for absolute URL
+baseurl: "/xkx_blog"         # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 
 # SNS settings
 RSS: false
-weibo_username:     huxpro
-zhihu_username:     huxpro
-github_username:    huxpro
+weibo_username:     許敲敲
+zhihu_username:     許敲敲
+github_username:    xkx9431
 #twitter_username:  huxpro
 facebook_username:  huxpro
 
@@ -68,22 +68,22 @@ ga_domain: huangxuan.me
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "写写代码，做做设计，看看产品。世界那么大，多玩玩看看。"
-sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "敲敲代码，打打篮球，看看风景。世界那么大，多看看走走。"
+sidebar-avatar: https://raw.githubusercontent.com/xkx9431/xkx_blog/master/img/xkx_eye_photo.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
-featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+featured-condition-size: 0              # A tag will be featured if the size of it is more than this condition value
 
 
 
 # Friends
 friends: [
     {
-        title: "Hux Blog",
-        href: "http://huangxuan.me"
+        title: "Xkx Blog",
+        href: "https://xkx9431.github.io/xkx_blog"
     },{
         title: "Foo",
         href: "#"
