@@ -37,7 +37,7 @@ import matplotlib.pyplot as plt
 and we will going to build a larger network that can slove the classic classfy problem ["minist"](http://yann.lecun.com/exdb/mnist/). 
 Here we'll use the MNIST dataset which consists of greyscale handwritten digits. Each image is 28x28 pixels, you can see a sample below.
 
-![mnist]( ./img/asserts/mnist.png)
+![mnist]( /img/asserts/mnist.png)
 
 Our goal is to build a neural network that can take one of these images and predict the digit in the image.
 
@@ -62,7 +62,7 @@ for image, label in trainloader:
     ## do things with images and labels
  ```
 You'll notice I created the trainloader with a batch size of 64, and shuffle=True. The batch size is the number of images we get in one iteration from the data loader and pass through our network, often called a batch. And shuffle=True tells it to shuffle the dataset every time we start going through the data loader again. But here I'm just grabbing the first batch so we can check out the data. We can see below that images is just a tensor with size (64, 1, 28, 28). So, 64 images per batch, 1 color channel, and 28x28 images.
-```jupyterpython
+```python
 dataiter = iter(trainloader)
 images, labels = dataiter.next()
 print(type(images))
@@ -76,17 +76,17 @@ print(labels.shape)
 ```
 
 this is what one of the images looks like.
-```jupyterpython
+```python
 plt.imshow(images[1].numpy().squeeze(), cmap='Greys_r');
 ```
-![](./img/asserts/output1.png)
+![](/img/asserts/output1.png)
 
 First, let's try to build a simple network for this dataset using weight matrices and matrix multiplications. Then, we'll see how to do it using PyTorch's **nn** module which provides a much more convenient and powerful method for defining network architectures.
 
 The networks you've seen so far are called _fully-connected_ or dense networks. Each unit in one layer is connected to each unit in the next layer. In fully-connected networks, the input to each layer must be a one-dimensional vector (which can be stacked into a 2D tensor as a batch of multiple examples). However, our images are `28x28` 2D tensors, so we need to convert them into 1D vectors. Thinking about sizes, we need to convert the batch of images with shape (64, 1, 28, 28) to a have a shape of (64, 784), 784 is 28 times 28. This is typically called flattening, we flattened the 2D images into 1D vectors.
 
 Previously you built a network with one output unit. Here we need 10 output units, one for each digit. We want our network to predict the digit shown in an image, so what we'll do is calculate probabilities that the image is of any one digit or class. This ends up being a discrete probability distribution over the classes (digits) that tells us the most likely class for the image. That means we need 10 output units for the 10 classes (digits). We'll see how to convert the network output into a probability distribution next.
-```jupyterpython
+```python
 def activation(x):
     return 1/(1+torch.exp(-x))
 
@@ -107,16 +107,16 @@ out = torch.mm(h, w2) + b2
 ```
 Now we have 10 outputs for our network. We want to pass in an image to our network and get out a probability distribution over the classes that tells us the likely class(es) the image belongs to. Something that looks like this:
 
-![./asser](./img/asserts/image_distribution.png)
+![./asser](/img/asserts/image_distribution.png)
 
 Here we see that the probability for each class is roughly the same. This is representing an untrained network, it hasn't seen any data yet so it just returns a uniform distribution with equal probabilities for each class.
 To calculate this probability distribution, we often use the [softmax function](https://baike.baidu.com/item/Softmax%E5%87%BD%E6%95%B0/22772270?fr=aladdin). Mathematically this looks like
 
-![](./img/asserts/math_formula1.PNG)
+![](/img/asserts/math_formula1.PNG)
 
 What this does is squish each input  𝑥𝑖  between 0 and 1 and normalizes the values to give you a proper probability distribution where the probabilites sum up to one.
 
-```jupyterpython
+```python
 def softmax(x):
     ## TODO: Implement the softmax function here
      return torch.exp(x)/torch.sum(torch.exp(x), dim=1).view(-1, 1)
@@ -131,7 +131,7 @@ print(probabilities.sum(dim=1))
 
 ```
 output:
-```jupyterpython
+```python
 torch.Size([64, 10])
 tensor([1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000,
         1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000,
@@ -146,7 +146,7 @@ tensor([1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000, 1.0000,
 ## Building networks with PyTorch
 PyTorch provides a module `nn` that makes building networks much simpler. Here I'll show you how to build the same one as above with 784 inputs, 256 hidden units, 10 output units and a softmax output.
 
-```jupyterpython
+```python
 from torch import nn
 class Network(nn.Module):
     def __init__(self):
@@ -173,21 +173,21 @@ class Network(nn.Module):
 ```
 Let's go through this bit by bit.
 
-```jupyterpython
+```python
 class Network(nn.Module):
 ```
 
 Here we're inheriting from `nn.Module`. Combined with `super().__init__()` this creates a class that tracks the architecture and provides a lot of useful methods and attributes. It is mandatory to inherit from nn.Module when you're creating a class for your network. The name of the class itself can be anything.
 
-```jupyterpython
+```python
 self.hidden = nn.Linear(784, 256)
 ```
 This line creates a module for a linear transformation,  𝑥𝐖+𝑏 , with 784 inputs and 256 outputs and assigns it to `self.hidden`. The module automatically creates the weight and bias tensors which we'll use in the `forward` method. You can access the weight and bias tensors once the network `(net)` is created with `net.hidden.weight` and `net.hidden.bias.`
-```jupyterpython
+```python
 self.output = nn.Linear(256, 10)
 ```
 Similarly, this creates another linear transformation with 256 inputs and 10 outputs.
-```jupyterpython
+```python
     self.sigmoid = nn.Sigmoid()
     self.softmax = nn.Softmax(dim=1)
 ```
@@ -197,7 +197,7 @@ def forward(self, x):
 ```
 PyTorch networks created with `nn.Module` must have a `forward` method defined. It takes in a tensor x and passes it through the operations you defined in the `__init__ method`.
 
-```jupyterpython
+```python
 x = self.hidden(x)
 x = self.sigmoid(x)
 x = self.output(x)
@@ -206,14 +206,14 @@ x = self.softmax(x)
 Here the input tensor `x` is passed through each operation and reassigned to `x`. We can see that the input tensor goes through the hidden layer, then a sigmoid function, then the output layer, and finally the softmax function. It doesn't matter what you name the variables here, as long as the inputs and outputs of the operations match the network architecture you want to build. The order in which you define things in the `__init__` method doesn't matter, but you'll need to sequence the operations correctly in the forward method.
 
 Now we can create a `Network` object.
-```jupyterpython
+```python
 # Create the network and look at it's text representation
 model = Network()
 model
 ```
 
 output:
-```jupyterpython
+```python
 Network(
   (hidden): Linear(in_features=784, out_features=256, bias=True)
   (output): Linear(in_features=256, out_features=10, bias=True)
@@ -223,7 +223,7 @@ Network(
 ```
 
 You can define the network somewhat more concisely and clearly using the `torch.nn.functional` module. This is the most common way you'll see networks defined as many operations are simple element-wise functions. We normally import this module as `F`, import `torch.nn.functional` as `F`.
-```jupyterpython
+```python
 import torch.nn.functional as F
 
 class Network(nn.Module):
@@ -246,17 +246,17 @@ class Network(nn.Module):
 
 So far we've only been looking at the sigmoid activation function, but in general any function can be used as an activation function. The only requirement is that for a network to approximate a non-linear function, the activation functions must be non-linear. Here are a few more examples of common activation functions: Tanh (hyperbolic tangent), and ReLU (rectified linear unit).
 
-![activation functions](./img/asserts/activation.png)
+![activation functions](/img/asserts/activation.png)
 
 In practice, the ReLU function is used almost exclusively as the activation function for hidden layers.
 
 ## Your Turn to Build a Network
 
-![network](./img/asserts/mlp_mnist.png)
+![network](/img/asserts/mlp_mnist.png)
 
 It's good practice to name your layers by their type of network, for instance 'fc' to represent a fully-connected layer. As you code your solution, use `fc1`, `fc2`, and `fc3` as your layer names.
 
-```jupyterpython
+```python
 ## Your solution here
 ## Solution
 
@@ -287,7 +287,7 @@ model
 
 ```
 output:
-```jupyterpython
+```python
 Network(
   (fc1): Linear(in_features=784, out_features=128, bias=True)
   (fc2): Linear(in_features=128, out_features=64, bias=True)
@@ -297,7 +297,7 @@ Network(
 ### Initializing weights and biases
 
 The weights and such are automatically initialized for you, but it's possible to customize how they are initialized. The weights and biases are tensors attached to the layer you defined, you can get them with `model.fc1.weight` for instance.
-```jupyterpython
+```python
 print(model.fc1.weight)
 print(model.fc1.bias)
 
@@ -342,7 +342,7 @@ tensor([ 3.3122e-03, -2.2035e-03, -2.2405e-02,  6.6186e-03,  1.4285e-02,
 
 ```
 For custom initialization, we want to modify these tensors in place. These are actually autograd Variables, so we need to get back the actual tensors with `model.fc1.weight.data`. Once we have the tensors, we can fill them with zeros (for biases) or random normal values.
-```jupyterpython
+```python
 # Set biases to all zeros
 model.fc1.bias.data.fill_(0)
 
@@ -355,7 +355,7 @@ tensor([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 
         0., 0., 0., 0., 0., 0., 0., 0.])
 
 ```
-```jupyterpython
+```python
 # sample from random normal with standard dev = 0.01
 model.fc1.weight.data.normal_(std=0.01)
 
@@ -373,7 +373,7 @@ tensor([[-0.0089,  0.0016,  0.0087,  ..., -0.0102, -0.0076, -0.0059],
 ### Forward pass
 Now that we have a network, let's see what happens when we pass in an image.
 
-```jupyterpython
+```python
 # Grab some data 
 dataiter = iter(trainloader)
 images, labels = dataiter.next()
@@ -390,14 +390,14 @@ img = images[img_idx]
 helper.view_classify(img.view(1, 28, 28), ps)
 ```
 
-![](./img/asserts/output2.png)
+![](/img/asserts/output2.png)
 
 As you can see above, our network has basically no idea what this digit is. It's because we haven't trained it yet, all the weights are random!
 
 Using nn.Sequential
 PyTorch provides a convenient way to build networks like this where a tensor is passed sequentially through operations, nn.Sequential ([documentation](https://pytorch.org/docs/master/nn.html#torch.nn.Sequential)). Using this to build the equivalent network:
 
-```jupyterpython
+```python
 # Hyperparameters for our network
 input_size = 784
 hidden_sizes = [128, 64]
@@ -430,13 +430,13 @@ helper.view_classify(images[0].view(1, 28, 28), ps)
 )
 
 ```
-![](./img/asserts/output3.png)
+![](/img/asserts/output3.png)
 
 Here our model is the same as before: 784 input units, a hidden layer with 128 units, ReLU activation, 64 unit hidden layer, another ReLU, then the output layer with 10 units, and the softmax output.
 
 The operations are available by passing in the appropriate index. For example, if you want to get first Linear operation and look at the weights, you'd use `model[0]`.
 
-```jupyterpython
+```python
 print(model[0])
 model[0].weight
 
@@ -460,7 +460,7 @@ tensor([[-1.9726e-02, -2.6318e-02,  7.3969e-04,  ..., -2.7043e-02,
 ```
 You can also pass in an `OrderedDict` to name the individual layers and operations, instead of using incremental integers. Note that dictionary keys must be unique, so each operation must have a different name.
 
-```jupyterpython
+```python
 from collections import OrderedDict
 model = nn.Sequential(OrderedDict([
                       ('fc1', nn.Linear(input_size, hidden_sizes[0])),
@@ -484,7 +484,7 @@ Sequential(
 
 Now you can access layers either by integer or the name
 
-```jupyterpython
+```python
 print(model[0])
 print(model.fc1)
 
