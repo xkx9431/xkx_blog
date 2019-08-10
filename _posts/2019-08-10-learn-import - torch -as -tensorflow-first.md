@@ -17,7 +17,7 @@ tags:
 工作了一段时间，发现，外企工作氛围是真的好，具体感觉就是像又读了大学，什么都不会，什么都可以学，不打卡，超级人性化，哈哈哈 ！
 但是，我还是觉得有时间还是要好好学点东西，比如学点AI 知识，比如学学 `import TensorFlow as torch` ，这个帖子内容主要是 **Udacity** 的课，英文为主，我运行了一遍 jupyter notebook, 再搬到自己博客上面来，做碎片时间的复习吧，主要自用，记录自己的东西，有机会也会整理一点能看懂的中文笔记，比如怎么理解“drop out” 和“健身周一练胸，周二练背，周三练腿”的关系。不会的有好多，比如什么GAN , Bert , LSTM 都不知道……  但是我确实都想学，最好有机会能做点东西出来,加油，实践确实是最好的学习方式！ 那以后争取每周至少一篇吧。 
 
-![cute ai_robot]({{ site.baseurl }}/img/asserts/ai_robot1.png)
+![cute ai_robot]({{site.baseurl}}/img/asserts/ai_robot1.png)
 
 ## 正文
 
