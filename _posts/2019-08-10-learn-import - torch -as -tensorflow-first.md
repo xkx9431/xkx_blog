@@ -4,7 +4,7 @@ title:      " learn import tensorflow as torch first class"
 subtitle:   " \"他们说我没女盆友，我说你不会 ‘import tensorflow as torch’\""
 date:       2019-07-15 24:00:00
 author:     "許敲敲"
-header-img: "img/cae-bg.png"
+header-img: "img/AI_bg.png"
 tags:
     - 学习
     - AI
