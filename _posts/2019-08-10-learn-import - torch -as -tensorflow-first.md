@@ -11,7 +11,7 @@ tags:
     - DeepLearning
 ---
 
-> “有机会还是多学学import tensorflow as torch”
+> “有机会还是多学学, import tensorflow as torch”
 
 ## 前言
 工作了一段时间，发现，外企工作氛围是真的好，感觉就是又读了大学，什么都不会，什么都可以学，不打卡，超级人性化！
