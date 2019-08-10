@@ -37,7 +37,7 @@ import matplotlib.pyplot as plt
 and we will going to build a larger network that can slove the classic classfy problem ["minist"](http://yann.lecun.com/exdb/mnist/). 
 Here we'll use the MNIST dataset which consists of greyscale handwritten digits. Each image is 28x28 pixels, you can see a sample below.
 
-![mnist]( /img/asserts/mnist.png)
+![mnist]( {{ site.baseurl }}/img/asserts/mnist.png)
 
 Our goal is to build a neural network that can take one of these images and predict the digit in the image.
 
@@ -79,7 +79,7 @@ this is what one of the images looks like.
 ```python
 plt.imshow(images[1].numpy().squeeze(), cmap='Greys_r');
 ```
-![](/img/asserts/output1.png)
+![]({{ site.baseurl }}/img/asserts/output1.png)
 
 First, let's try to build a simple network for this dataset using weight matrices and matrix multiplications. Then, we'll see how to do it using PyTorch's **nn** module which provides a much more convenient and powerful method for defining network architectures.
 
@@ -107,12 +107,12 @@ out = torch.mm(h, w2) + b2
 ```
 Now we have 10 outputs for our network. We want to pass in an image to our network and get out a probability distribution over the classes that tells us the likely class(es) the image belongs to. Something that looks like this:
 
-![./asser](/img/asserts/image_distribution.png)
+![./asser]({{ site.baseurl }}/img/asserts/image_distribution.png)
 
 Here we see that the probability for each class is roughly the same. This is representing an untrained network, it hasn't seen any data yet so it just returns a uniform distribution with equal probabilities for each class.
 To calculate this probability distribution, we often use the [softmax function](https://baike.baidu.com/item/Softmax%E5%87%BD%E6%95%B0/22772270?fr=aladdin). Mathematically this looks like
 
-![](/img/asserts/math_formula1.PNG)
+![]({{ site.baseurl }}/img/asserts/math_formula1.PNG)
 
 What this does is squish each input  𝑥𝑖  between 0 and 1 and normalizes the values to give you a proper probability distribution where the probabilites sum up to one.
 
@@ -246,13 +246,13 @@ class Network(nn.Module):
 
 So far we've only been looking at the sigmoid activation function, but in general any function can be used as an activation function. The only requirement is that for a network to approximate a non-linear function, the activation functions must be non-linear. Here are a few more examples of common activation functions: Tanh (hyperbolic tangent), and ReLU (rectified linear unit).
 
-![activation functions](/img/asserts/activation.png)
+![activation functions]({{ site.baseurl }}/img/asserts/activation.png)
 
 In practice, the ReLU function is used almost exclusively as the activation function for hidden layers.
 
 ## Your Turn to Build a Network
 
-![network](/img/asserts/mlp_mnist.png)
+![network]({{ site.baseurl }}/img/asserts/mlp_mnist.png)
 
 It's good practice to name your layers by their type of network, for instance 'fc' to represent a fully-connected layer. As you code your solution, use `fc1`, `fc2`, and `fc3` as your layer names.
 
@@ -390,7 +390,7 @@ img = images[img_idx]
 helper.view_classify(img.view(1, 28, 28), ps)
 ```
 
-![](/img/asserts/output2.png)
+![]({{ site.baseurl }}/img/asserts/output2.png)
 
 As you can see above, our network has basically no idea what this digit is. It's because we haven't trained it yet, all the weights are random!
 
@@ -430,7 +430,7 @@ helper.view_classify(images[0].view(1, 28, 28), ps)
 )
 
 ```
-![](/img/asserts/output3.png)
+![]({{ site.baseurl }}/img/asserts/output3.png)
 
 Here our model is the same as before: 784 input units, a hidden layer with 128 units, ReLU activation, 64 unit hidden layer, another ReLU, then the output layer with 10 units, and the softmax output.
 
