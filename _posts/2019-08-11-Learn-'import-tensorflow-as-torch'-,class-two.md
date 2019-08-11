@@ -37,18 +37,18 @@ are the true labels, and  𝑦̂ 𝑖  are the predicted labels.
 
 By minimizing this loss with respect to the network parameters, we can find configurations where the loss is at a minimum and the network is able to predict the correct labels with high accuracy. We find this minimum using a process called **gradient descent**. The gradient is the slope of the loss function and points in the direction of fastest change. To get to the minimum in the least amount of time, we then want to follow the gradient (downwards). You can think of this like descending a mountain by following the steepest slope to the base.
 
-![gradient descent](../img/asserts/gradient_descent.png)
+![gradient descent]({{ site.baseurl }}/img/asserts/gradient_descent.png)
 
 ## Backpropagation
 For single layer networks, gradient descent is straightforward to implement. However, it's more complicated for deeper, multilayer neural networks like the one we've built. Complicated enough that it took about 30 years before researchers figured out how to train multilayer networks.
 
 Training multilayer networks is done through **backpropagation** which is really just an application of the chain rule from calculus. It's easiest to understand if we convert a two layer network into a graph representation.
-![Backpropagation](../img/asserts/backprop_diagram.png)
+![Backpropagation]({{ site.baseurl }}/img/asserts/backprop_diagram.png)
 
 In the forward pass through the network, our data and operations go from bottom to top here. We pass the input   𝑥  through a linear transformation  **𝐿1**  with weights  **𝑊1**  and biases  𝑏1 . The output then goes through the sigmoid operation  **𝑆**  and another linear transformation  **𝐿2** . Finally we calculate the loss  ℓ . We use the loss as a measure of how bad the network's predictions are. The goal then is to adjust the weights and biases to minimize the loss.
 
 To train the weights with gradient descent, we propagate the gradient of the loss backwards through the network. Each operation has some gradient between the inputs and outputs. As we send the gradients backwards, we multiply the incoming gradient with the gradient for the operation. Mathematically, this is really just calculating the gradient of the loss with respect to the weights using the chain rule.
-![chain rule for gradient descent](../img/asserts/math_formula3.png)
+![chain rule for gradient descent]({{ site.baseurl }}/img/asserts/math_formula3.png)
 **Note:** I'm glossing over a few details here that require some knowledge of vector calculus, but they aren't necessary to understand what's going on.
 
 We update our weights using this gradient with some learning rate  𝛼 .
@@ -381,7 +381,7 @@ with torch.no_grad():
 ps = torch.exp(logps)
 helper.view_classify(img.view(1, 28, 28), ps)
 ```
-![outputs](../img/asserts/output4.png)
+![outputs]({{ site.baseurl }}/img/asserts/output4.png)
 
 Now our network is brilliant. It can accurately predict the digits in our images. Next up you'll write the code for training a neural network on a more complex dataset.
 
