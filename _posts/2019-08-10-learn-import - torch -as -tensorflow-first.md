@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      " learn import tensorflow as torch first class"
+title:      " Learn 'import tensorflow as torch', class 1"
 subtitle:   " \"他们说我没女盆友，我说你不会 ‘import tensorflow as torch’\""
-date:       2019-07-15 24:00:00
+date:       2019-08-10 23:00:00
 author:     "許敲敲"
 header-img: "img/AI_bg.png"
 tags:
