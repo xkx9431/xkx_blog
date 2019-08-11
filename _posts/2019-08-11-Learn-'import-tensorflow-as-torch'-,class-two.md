@@ -30,14 +30,14 @@ At first the network is naive, it doesn't know the function mapping the inputs t
 
 To find these parameters, we need to know how poorly the network is predicting the real outputs. For this we calculate a **loss function** (also called the cost), a measure of our prediction error. For example, the mean squared loss is often used in regression and binary classification problems
 
-![mean squared loss]({{site.baseurl}}/img/asserts/math_formula2.png)
+![mean_squared_loss]({{site.baseurl}}/img/asserts/math_formula2.png)
 
-where  𝑛  is the number of training examples,$y_i$  
+where  𝑛  is the number of training examples,yi  
 are the true labels, and  𝑦̂ 𝑖  are the predicted labels.
 
 By minimizing this loss with respect to the network parameters, we can find configurations where the loss is at a minimum and the network is able to predict the correct labels with high accuracy. We find this minimum using a process called **gradient descent**. The gradient is the slope of the loss function and points in the direction of fastest change. To get to the minimum in the least amount of time, we then want to follow the gradient (downwards). You can think of this like descending a mountain by following the steepest slope to the base.
 
-![gradient descent]({{ site.baseurl }}/img/asserts/gradient_descent.png)
+![gradient_descent]({{ site.baseurl }}/img/asserts/gradient_descent.png)
 
 ## Backpropagation
 For single layer networks, gradient descent is straightforward to implement. However, it's more complicated for deeper, multilayer neural networks like the one we've built. Complicated enough that it took about 30 years before researchers figured out how to train multilayer networks.
@@ -52,7 +52,7 @@ To train the weights with gradient descent, we propagate the gradient of the los
 **Note:** I'm glossing over a few details here that require some knowledge of vector calculus, but they aren't necessary to understand what's going on.
 
 We update our weights using this gradient with some learning rate  𝛼 .
-$$ \large W^\prime_1 = W_1 - \alpha \frac{\partial \ell}{\partial W_1}$$
+![MATH_FOEMULA]({{ site.baseurl }}/img/asserts/math_formula4.png)
 
 ## Losses in PyTorch
 Let's start by seeing how we calculate the loss with PyTorch. Through the nn module, PyTorch provides losses such as the cross-entropy loss (`nn.CrossEntropyLoss`). You'll usually see the loss assigned to `criterion`. As noted in the last part, with a classification problem such as MNIST, we're using the softmax function to predict class probabilities. With a softmax output, you want to use cross-entropy as the loss. To actually calculate the loss, you first define the criterion then pass in the output of your network and the correct labels.
@@ -193,10 +193,7 @@ print(x.grad)
 None
 ```
 To calculate the gradients, you need to run the `.backward` method on a Variable, `z` for example. This will calculate the gradient for `z` with respect to `x`
-
-$$
-\frac{\partial z}{\partial x} = \frac{\partial}{\partial x}\left[\frac{1}{n}\sum_i^n x_i^2\right] = \frac{x}{2}
-$$
+![MATH_FOEMULA]({{ site.baseurl }}/img/asserts/math_formula5.png)
 ```python
 z.backward()
 print(x.grad)
