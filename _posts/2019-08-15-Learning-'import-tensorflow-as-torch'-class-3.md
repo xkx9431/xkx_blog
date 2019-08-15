@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      " Learn 'import tensorflow as torch', class 2"
+title:      " Learn 'import tensorflow as torch', class 3"
 subtitle:   " \"‘import tensorflow as torch’\""
 date:       2019-08-15 23:00:00
 author:     "許敲敲"
