@@ -1,10 +1,10 @@
 ---
 layout:     post
 title:     "React-Infinite-Scroll-and-Lazy-Loading"
-subtitle:   "React 中使用HTML Intersection Observer来实现无线Scroll 和图片懒加载"
+subtitle:   "React中使用 Intersection Observer来实现无限Scroll 和图片懒加载"
 date:       2020-05-19 17:20:00
 author:     "許敲敲"
-header-img: "img/AI_bg.png"
+header-img: " img/lazy-bear.jpg"
 tags:
     - 学习
     - React
